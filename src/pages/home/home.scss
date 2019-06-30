@@ -1,3 +1,41 @@
 page-home {
+  .welcome-title{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+  .user-icon{
+    margin-right: 10px;
+    font-size: 35px;
+    color: navy;
+  }
+  .welcome-title h2{
+    color:navy;
+    margin-bottom: 0px;
+  }
+  .welcome-description{
+    color:gray;
+  }
 
+  .room-ok{
+    color: green;
+  }
+  .room-close{
+    color: darkred;
+  }
+  .room-ok, .room-close{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+}
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+.text{
+  padding-left: 3vh;
+  font-size: 16px;
+  color: #232323;
 }

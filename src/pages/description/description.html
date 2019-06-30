@@ -1,0 +1,26 @@
+<!--
+  Generated template for the DescriptionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>รายละเอียดการจอง</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form novalidate #descForm="ngForm">
+  <ion-list>
+    <h5>รายละเอียดการจอง :</h5>
+    <ion-item>
+      <ion-textarea rows="20" [(ngModel)]="desc" class="des-text" name="desc" placeholder="กรุณาใส่เหตุผลการจองห้องนี้" floating required></ion-textarea>
+    </ion-item>
+
+    <div class="bottom-descript">
+      <button ion-button class="next-btn" large full type="submit" (click)="goToResult()" [disabled] = "!descForm.form.valid">ถัดไป</button>
+    </div>
+  </ion-list>
+</form>
+</ion-content>

@@ -1,0 +1,31 @@
+page-a604 {
+    .top-icon{
+        font-size: 50px;
+        color: navy;
+    }
+    .accessory {
+        font-size: 35px;
+    }
+    .head-pic{
+        color: white;
+        height: 200px;
+        background-size: cover;
+        background-image: url("/assets/imgs/A604.jpg");
+    }
+    .head-roomNo{
+        bottom: 0;
+        font-size: 35px;
+        padding-top: 120px;
+        text-shadow: 2px 2px 10px black;
+    }
+
+    .head-title{
+        font-size: 28px;
+    }
+    .head-close-btn button{
+        border-radius: 100%;
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}

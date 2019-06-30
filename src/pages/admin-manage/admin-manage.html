@@ -1,0 +1,51 @@
+<!--
+  Generated template for the AdminManagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>จัดการการจอง</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="none-user" *ngIf="showNoneDiv">
+      <h1><img src="../../assets/imgs/itkung.jpg"></h1>
+    <span class="none-user-title">ไม่มีผู้จองในตอนนี้</span><br />
+  </div>
+
+  <div style="margin-bottom: 15px;" *ngIf="!showNoneDiv">
+    <b class="admin-title">จัดการการจอง</b><br />
+    <span class="admin-des"
+      >แตะเพื่อดูรายละเอียด | ปัดทางซ้ายเพื่อลบข้อมูล</span
+    >
+  </div>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of (items | async)">
+      <button ion-item (click)="goToHistoryDetail(item)">
+        <div class="roomNo">
+          วันที่ : {{ item.Date
+          }}<span *ngIf="item.Date == (today | date: 'yyyy-MM-dd')">
+            <ion-badge color="secondary"> วันนี้ </ion-badge></span
+          >
+          <br />
+          ห้อง : {{ item.Room }}
+          <span class="h-arrow">
+            <ion-icon name="arrow-round-forward"></ion-icon>
+          </span>
+        </div>
+
+        ผู้จอง : {{ item.FirstName }} {{ item.LastName }}<br />
+        <span class="h-description">{{ item.Description }}</span>
+      </button>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="delete(item)">
+          <ion-icon name="trash"></ion-icon>
+          ลบข้อมูล
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

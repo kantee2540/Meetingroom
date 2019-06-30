@@ -1,18 +1,93 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+    </ion-buttons>
+    <ion-title>
+      Meeting Room
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <div class="welcome-title" full>
+    <table>
+      <tr>
+        <td>
+          <ion-icon class="user-icon" name="contact"></ion-icon>
+        </td>
+        <td>
+          <h2>สวัสดี!, {{ first_name }} {{ last_name }}</h2>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <span class="welcome-description"
+            >สามารถเลือกห้องประชุมที่สามารถจองได้</span
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+  <ion-label class="text">ห้องประชุมทั้งหมด</ion-label>
+  <ion-card class="welcome-card">
+    <img src="../assets/imgs/A604.jpg" />
+    <ion-card-header>
+      <ion-card-title>A604</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="room-ok" [hidden]="iconCheckA604()">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <b>สถานะ:</b>
+        {{ checkA604Room() }}
+      </div>
+      <div class="room-close" [hidden]="!iconCheckA604()">
+        <ion-icon name="close-circle"></ion-icon>
+        <b>สถานะ:</b>
+        {{ checkA604Room() }}
+      </div>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <button
+        ion-button
+        full
+        color="primary"
+        expand="block"
+        (click)="reserveA604()"
+        [disabled]="checkButtonA604()">
+        จอง
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card">
+    <img src="../assets/imgs/A605.jpg" />
+    <ion-card-header>
+      <ion-card-title>A605</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="room-ok" [hidden]="iconCheckA605()">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <b>สถานะ:</b>
+        {{ checkA605Room() }}
+      </div>
+      <div class="room-close" [hidden]="!iconCheckA605()">
+        <ion-icon name="close-circle"></ion-icon>
+        <b>สถานะ:</b>
+        {{ checkA605Room() }}
+      </div>
+      <button
+        ion-button
+        full
+        color="primary"
+        expand="block"
+        (click)="reserveA605()"
+        [disabled]="checkButtonA605()"
+      >
+        จอง
+      </button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

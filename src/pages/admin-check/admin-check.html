@@ -1,0 +1,45 @@
+<!--
+  Generated template for the AdminCheckPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ผู้ดูแลระบบ</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div style="margin-bottom: 15px;">
+    <b class="admin-title">การตั้งค่า</b><br />
+    <span class="admin-des">สามารถจัดการตั้งเพิ่มเติมได้ สำหรับผู้ดูแลระบบเท่านั้น</span>
+  </div>
+  <ion-list>
+    <button ion-item (click)="goToAdminManage()">
+      <ion-icon name="list"></ion-icon> จัดการการจอง
+    </button>
+    <button ion-item (click)="goToSetting()">
+      <ion-icon name="clipboard"></ion-icon> การอนุญาติการจอง
+    </button>
+    <button ion-item (click)="goToChangeUsername()">
+      <ion-icon name="person"></ion-icon> เปลี่ยนชื่อผู้ใช้ผู้ดูแลระบบ
+    </button>
+    <button ion-item (click)="goToChangePassword()">
+      <ion-icon name="key"></ion-icon> เปลี่ยนรหัสผ่านผู้ดูแลระบบ
+    </button>
+    <button ion-item (click)="clearHistory()">
+      <ion-icon name="trash"></ion-icon> ล้างประวัติการจองทั้งหมด
+    </button>
+    <button ion-item (click)="goToHelp()">
+      <ion-icon name="help"></ion-icon> วิธีใช้งาน
+    </button>
+    <button ion-item (click) = "signOut()">
+      <ion-icon name="log-out"></ion-icon> ออกจากระบบ
+    </button>
+  </ion-list>
+</ion-content>

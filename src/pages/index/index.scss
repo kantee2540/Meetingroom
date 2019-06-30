@@ -1,0 +1,23 @@
+page-index {
+    /*background-image: url('../../assets/imgs/bg.png');*/
+    .historybtn{
+    }
+    .main-logo{
+        color: navy;
+        font-size: 25px;
+    }
+    .logo{
+        width: 50%;
+    }
+    .credit-plane{
+        background-color: rgba(0, 0, 0, 0.5);
+        color:white;
+        bottom: 0;
+        padding: 8px;
+    }
+}
+.index-content{
+    background-image: url('../assets/imgs/bg-tran.png');
+    background-size: cover;
+    background-position-x: 300px; 
+}

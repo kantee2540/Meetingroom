@@ -1,0 +1,56 @@
+<!--
+  Generated template for the AdminSettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ตั้งค่าการอนุญาติการจองห้อง</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="top-description">หน้านี้สามารถการตั้งค่าสถานะห้องว่า อนุญาติให้จองหรือไม่ โดยเมื่อตั้งค่าแล้วจะมีผลทันที</div>
+  <form #statusRoom="ngForm">
+    <h2>ห้อง A604</h2>
+    <ion-list radio-group name="A604" [(ngModel)]="A604">
+      <ion-item>
+        <ion-label>
+          <ion-icon name="checkmark"></ion-icon>อนุญาติให้จอง
+        </ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-icon name="close"></ion-icon>ปิดการจอง
+        </ion-label>
+        <ion-radio value="0"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <h2>ห้อง A605</h2>
+    <ion-list radio-group name="A605" [(ngModel)]="A605">
+      <ion-item>
+        <ion-label>
+          <ion-icon name="checkmark"></ion-icon>อนุญาติให้จอง
+        </ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-icon name="close"></ion-icon>ปิดการจอง
+        </ion-label>
+        <ion-radio value="0"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <button ion-button full large type="submit" (click)="goToSettingAccept(statusRoom.value)" [disabled]="notAllowSave">
+      <ion-icon name="checkmark"></ion-icon>
+      ตั้งค่าสถานะห้อง
+    </button>
+
+  </form>
+</ion-content>

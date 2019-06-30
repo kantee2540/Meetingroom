@@ -1,0 +1,67 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>A604</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="head-pic" padding>
+    <div class="head-roomNo">ห้อง A604</div>
+  </div>
+
+  <div padding>
+    <h1> รายละเอียดห้องประชุม : </h1>
+
+    <ion-grid align="center">
+      <ion-row>
+        <ion-col>
+          <ion-icon class="top-icon" name="people"></ion-icon><br>
+          รองรับได้สูงสุด 12 คน
+        </ion-col>
+        <ion-col>
+          <ion-icon class="top-icon" name="timer"></ion-icon><br>
+          จองได้นานสูงสุด 3 ชั่วโมง
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--<img src="assets/imgs/detail.png" />-->
+    <h1> อุปกรณ์ และเครื่องมือที่มีในห้องประชุมนี้ : </h1>
+    <!--<img src="assets/imgs/detail2.png" />-->
+
+    <ion-grid align="center">
+      <ion-row>
+        <ion-col>
+          <ion-icon class="accessory" name="desktop"></ion-icon><br>
+          คอมพิวเตอร์
+        </ion-col>
+        <ion-col>
+          <ion-icon class="accessory" name="create"></ion-icon><br>
+          กระดานไวบอร์ด
+        </ion-col>
+        <ion-col>
+          <ion-icon class="accessory" name="videocam"></ion-icon><br>
+          โปรเจคเตอร์
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon class="accessory" name="mic"></ion-icon><br>
+          ไมโครโฟน
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <div class="margin">
+      ห้องประชุมนี้ สามารถจองได้เฉพาะ <br>"อาจารย์หรือบุคลากร คณะเทคโนโลยีสารสนเทศ(IT) เท่านั้น"
+    </div>
+    <div class="margin">
+      <button ion-button full large (click)="goToChooseTime()">จอง</button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,126 @@
+<!--
+  Generated template for the ResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+  crossorigin="anonymous"
+/>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>สรุปรายละเอียด</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form novalidate #time="ngForm" (ngSubmit)="save()">
+    <!--รับค่าจากหน้า ต่างๆ ไว้ส่งต่อ Firebase-->
+    <ion-textarea
+      [(ngModel)]="first_name"
+      name="first_name"
+      value="{{ first_name }}"
+      floating
+      hidden
+    ></ion-textarea>
+    <ion-textarea
+      [(ngModel)]="last_name"
+      name="last_name"
+      value="{{ last_name }}"
+      floating
+      hidden
+    ></ion-textarea>
+    <ion-textarea
+      [(ngModel)]="roomNo"
+      name="roomNo"
+      value="{{ roomNo }}"
+      floating
+      hidden
+    ></ion-textarea>
+    <ion-textarea
+      [(ngModel)]="desc"
+      name="desc"
+      value="{{ desc }}"
+      floating
+      hidden
+    ></ion-textarea>
+    <ion-textarea
+      [(ngModel)]="dateTime"
+      name="dateTime"
+      value="{{ dateTime }}"
+      floating
+      hidden
+    ></ion-textarea>
+    <ion-card>
+      <ion-card-content style="font-size: 26px; color: blue">
+        <!-- Room no recieve from -->
+        ห้อง {{ roomNo }}
+      </ion-card-content>
+
+      <ion-card-content>
+        <div>
+          <b>
+            ชื่อ :&nbsp;&nbsp;&nbsp;
+          </b>
+          <!-- receive name who booked this here. -->
+          {{ first_name }} {{ last_name }}
+        </div>
+        <div>
+          <b>
+            วันที่จอง :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </b>
+          <!-- receive date here -->
+          {{ dateTime }}
+        </div>
+
+        <!-- this is horizontal line -->
+        <hr />
+
+        <!-- make it bold -->
+        <b>เวลา :</b>
+
+        <!-- Receive time from previosly page -->
+        <!-- 2 line -->
+        <table style="width: 100%">
+          <!-- time 01 -->
+          <tr>
+            <td style="text-align: left" style="width: 50%">
+              <div *ngIf="checkboxModel.length > 0">
+                <span>{{ checkboxModel }}</span>
+              </div>
+            </td>
+
+            <td style="text-align: right">{{ countTime }} Hr.</td>
+          </tr>
+          <!-- if more than 1 times type, add more-->
+          <!-- use while loop -->
+        </table>
+
+        <hr />
+
+        <div>
+          <b>รายละเอียด : </b><br>
+          {{ desc }}
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <!-- End of Card -->
+    <div class="confirm-info">
+      <b>ยืนยันการจองหรือไม่?</b><br>
+    หากยืนยันการจองแล้ว จะไม่สามารถแก้ไขข้อมูลได้ ถ้าต้องการแก้ไข
+    กรุณากดย้อนกลับ
+    </div>
+    
+    <button ion-button full large type="submit">
+      ยืนยันการจอง
+    </button>
+  </form>
+</ion-content>
